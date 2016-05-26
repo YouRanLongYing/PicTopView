@@ -7,3 +7,12 @@ E:\project\csharpTest\PicTopView\PicTopView\obj\Debug\PicTopView.Properties.Reso
 E:\project\csharpTest\PicTopView\PicTopView\obj\Debug\PicTopView.csproj.GenerateResource.Cache
 E:\project\csharpTest\PicTopView\PicTopView\obj\Debug\PicTopView.exe
 E:\project\csharpTest\PicTopView\PicTopView\obj\Debug\PicTopView.pdb
+E:\PicTopView-master\PicTopView-master\PicTopView\bin\Debug\PicTopView.exe.config
+E:\PicTopView-master\PicTopView-master\PicTopView\obj\Debug\PicTopView.exe
+E:\PicTopView-master\PicTopView-master\PicTopView\obj\Debug\PicTopView.pdb
+E:\PicTopView-master\PicTopView-master\PicTopView\bin\Debug\PicTopView.exe
+E:\PicTopView-master\PicTopView-master\PicTopView\bin\Debug\PicTopView.pdb
+E:\PicTopView-master\PicTopView-master\PicTopView\obj\Debug\PicTopView.csprojResolveAssemblyReference.cache
+E:\PicTopView-master\PicTopView-master\PicTopView\obj\Debug\PicTopView.Form1.resources
+E:\PicTopView-master\PicTopView-master\PicTopView\obj\Debug\PicTopView.Properties.Resources.resources
+E:\PicTopView-master\PicTopView-master\PicTopView\obj\Debug\PicTopView.csproj.GenerateResource.Cache

@@ -14,7 +14,7 @@ namespace PicTopView
     public partial class Form1 : Form
     {
         private string picPath = "";
-
+        private System.Drawing.Size oriSize;
         public string PicPath
         {
             get { return picPath; }
@@ -38,6 +38,8 @@ namespace PicTopView
                             size.Height = map.Height;
                             size.Width = map.Width;
                             this.ClientSize = size;
+                            rate = 1D;
+                            oriSize = size;
                             this.Text = string.Format("{0}  Width:{1},Height:{2}", file.Name, this.Width, this.Height);
                             picPath = value;
                         }
@@ -69,6 +71,8 @@ namespace PicTopView
             notifyIcon1.Text = this.Text;
             this.notifyIcon1.Visible = false;
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            oriSize = this.ClientSize;
+            //this.OnMouseWheel
         }
 
         private void 更换图片ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -176,6 +180,16 @@ namespace PicTopView
                 newPos = new Point(newPos.X + currentScreen.WorkingArea.X, newPos.Y + currentScreen.WorkingArea.Y);
                 this.Location = newPos;
             }
+            if (e.KeyCode == Keys.Home)
+            {
+                rate += 0.001;
+                UpdateWindow();
+            }
+            if (e.KeyCode == Keys.End)
+            {
+                rate -= 0.001;
+                UpdateWindow();
+            }
             if (d > 1D)
                 d = 1D;
             if (d < 0D)
@@ -215,7 +229,7 @@ namespace PicTopView
             this.Show();
             this.WindowState = FormWindowState.Normal;
             this.notifyIcon1.Visible = false;
-            
+
         }
 
         private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
@@ -226,7 +240,36 @@ namespace PicTopView
             //}
         }
 
+        double rate = 1D;
+        protected override void OnMouseWheel(MouseEventArgs e)
+        {
+            if (e.Delta >= 0)
+            {
+                rate += 0.01;
+            }
+            else
+            {
+                rate -= 0.01;
+            }
 
+            UpdateWindow();
+        }
+
+        void UpdateWindow()
+        {
+            Width = (int)(oriSize.Width * rate);
+            Height = (int)(oriSize.Height * rate);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.Width = Width;
+            pictureBox1.Height = Height;
+            ResizeRedraw = true;
+            
+            Refresh();
+            Update();
+            pictureBox1.Refresh();
+            pictureBox1.Update();
+
+        }
 
 
     }
